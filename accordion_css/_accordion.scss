@@ -1,0 +1,140 @@
+// vars
+
+// $accType: 'horizontal';// Горизонтальный аккордион
+$accType: 'vertical';// Вертикальный аккордион
+
+// fonts
+$acc-font: Arial, Helvetica, sans-serif;
+$acc-font-size: 14px;
+$acc-font-size-title: 16px;
+$acc-color: #542437;
+
+// palette
+$acc-bd: #542437;
+$acc-bg: #fff;
+$acc-bg-title: #D95B43;
+$acc-bg-bd: #542437;
+
+// sizes
+$acc-padding-block: 10px;
+$acc-padding-title: 10px;
+$acc-padding-content: 10px;
+$acc-height: 300px;
+$acc-width-title-hor: 25px;
+$acc-width-content-hor: 442px;
+
+// transitions
+$acc-tran-title: .2s;
+$acc-tran-content: .5s;
+
+/* Accordion */
+.accordion {
+	font-family: $acc-font;
+    font-size: $acc-font-size;
+    border: 1px solid $acc-bd;
+    padding: $acc-padding-block;
+    background: $acc-bg;
+
+    @if $accType == 'horizontal' {
+    	overflow: hidden;
+    }
+
+    ul {
+    	list-style: none;
+    	margin: 0;
+    	padding: 0;
+    }
+
+    li {
+    	padding: 0;
+		overflow: hidden;
+		@if $accType == 'horizontal' {
+			float: left;
+			margin: 0 1px 0 0;
+		} @else {
+			margin: 0 0 1px;
+		}
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+    	display: none;
+    }
+
+    label {
+    	display: block;
+    	cursor: pointer;
+    	font-size: $acc-font-size-title;
+    	background-color: $acc-bg-title;
+    	border: 1px solid $acc-bg-bd;
+    	color: $acc-color;
+    	-moz-transition: all $acc-tran-title ease-out;
+    	-webkit-transition: all $acc-tran-title ease-out;
+    	transition: all $acc-tran-title ease-out;
+		padding: $acc-padding-title;
+
+		@if $accType == 'horizontal' {
+			word-wrap: break-word;
+			letter-spacing: $acc-padding-title;
+			text-align: center;
+			height: $acc-height - 2*$acc-padding-block;
+			padding: $acc-padding-title 0 $acc-padding-title $acc-padding-title/2;
+			width: $acc-width-title-hor;
+			float: left;
+		} @else {
+			line-height: $acc-font-size-title;
+		}
+    }
+
+    ul li label:hover,
+    input[type=radio]:checked ~ label,
+    input[type=checkbox]:checked ~ label {
+    	background:#C02942;
+	    color:#FFF;
+	    text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+	    @if $accType == 'horizontal' {
+	    	border:1px solid $acc-bd;
+	    }
+    }
+
+    input[type=radio]:checked ~ label,
+    input[type=checkbox]:checked ~ label {
+    	@if $accType == 'horizontal' {
+    		border-right: none;
+    	} @else {
+			border-bottom: none;
+    	}
+    }
+
+    .content {
+    	padding:0 $acc-padding-content;
+	    overflow:hidden;
+	    -moz-transition: all $acc-tran-content ease-out;
+	    -webkit-transition: all $acc-tran-content ease-out;
+	    transition: all $acc-tran-content ease-out;
+	    @if $accType == 'horizontal' {
+	    	height: $acc-height;
+	    	padding: 0;
+	    	display: inline-block;
+	    	visibility: hidden;
+	    	width: 1px;
+	    	border-left: none;
+	    } @else {
+			height: 0;
+	    	border-top: none;
+	    }
+    }
+
+    input[type=radio]:checked ~ .content,
+    input[type=checkbox]:checked ~ .content {
+    	border: 1px solid $acc-bd;
+    	@if $accType == 'horizontal' {
+    		visibility: visible;
+    		width: $acc-width-content-hor;
+    		padding: 0 $acc-padding-content;
+    		border-left: none;
+    	} @else {
+    		height: $acc-height;
+    	}
+    }
+}

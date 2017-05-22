@@ -1,0 +1,55 @@
+//- Горизонтальный или вертикальный аккордион. Открыто всегда только одно поле (на radio)
+- var typeAcc = 'openOnlyOne'
+//- Горизонтальный или вертикальный аккордион. Открыто/закрыто всегда сколько угодно полей (на checkbox)
+//- - var typeAcc = 'openAny'
+
+.accordion
+	ul
+		li
+			case typeAcc
+				when 'openOnlyOne'
+					input(type="radio" id="accordion-1" name="accordion" checked)
+					label(for="accordion-1") Title&nbsp;one
+				when 'openAny'
+					input(type="checkbox" id="accordion-1" name="accordion")
+					label(for="accordion-1") Title&nbsp;one
+			.content
+				h3 Lorem ipsum dolor sit amet.
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, ipsam, unde. Eaque molestias quaerat aspernatur? Voluptatum fuga quas vitae ad commodi incidunt, nostrum accusamus consectetur, atque saepe similique, accusantium excepturi!
+				p Provident quo, laborum! Nam laudantium, doloribus quidem fugit quas perspiciatis fuga aliquid, reprehenderit, incidunt consectetur rem porro. Eligendi cumque, ad voluptas eius possimus quaerat, alias expedita aspernatur maxime, natus saepe!
+		li
+			case typeAcc
+				when 'openOnlyOne'
+					input(type="radio" id="accordion-2" name="accordion")
+					label(for="accordion-2") Title&nbsp;two
+				when 'openAny'
+					input(type="checkbox" id="accordion-2" name="accordion")
+					label(for="accordion-2") Title&nbsp;two
+			.content
+				h3 Lorem ipsum dolor sit amet.
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, ipsam, unde. Eaque molestias quaerat aspernatur? Voluptatum fuga quas vitae ad commodi incidunt, nostrum accusamus consectetur, atque saepe similique, accusantium excepturi!
+				p Provident quo, laborum! Nam laudantium, doloribus quidem fugit quas perspiciatis fuga aliquid, reprehenderit, incidunt consectetur rem porro. Eligendi cumque, ad voluptas eius possimus quaerat, alias expedita aspernatur maxime, natus saepe!
+		li
+			case typeAcc
+				when 'openOnlyOne'
+					input(type="radio" id="accordion-3" name="accordion")
+					label(for="accordion-3") Title&nbsp;three
+				when 'openAny'
+					input(type="checkbox" id="accordion-3" name="accordion")
+					label(for="accordion-3") Title&nbsp;three
+			.content
+				h3 Lorem ipsum dolor sit amet.
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, ipsam, unde. Eaque molestias quaerat aspernatur? Voluptatum fuga quas vitae ad commodi incidunt, nostrum accusamus consectetur, atque saepe similique, accusantium excepturi!
+				p Provident quo, laborum! Nam laudantium, doloribus quidem fugit quas perspiciatis fuga aliquid, reprehenderit, incidunt consectetur rem porro. Eligendi cumque, ad voluptas eius possimus quaerat, alias expedita aspernatur maxime, natus saepe!
+		li
+			case typeAcc
+				when 'openOnlyOne'
+					input(type="radio" id="accordion-4" name="accordion")
+					label(for="accordion-4") Title&nbsp;four
+				when 'openAny'
+					input(type="checkbox" id="accordion-4" name="accordion")
+					label(for="accordion-4") Title&nbsp;four
+			.content
+				h3 Lorem ipsum dolor sit amet.
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, ipsam, unde. Eaque molestias quaerat aspernatur? Voluptatum fuga quas vitae ad commodi incidunt, nostrum accusamus consectetur, atque saepe similique, accusantium excepturi!
+				p Provident quo, laborum! Nam laudantium, doloribus quidem fugit quas perspiciatis fuga aliquid, reprehenderit, incidunt consectetur rem porro. Eligendi cumque, ad voluptas eius possimus quaerat, alias expedita aspernatur maxime, natus saepe!
