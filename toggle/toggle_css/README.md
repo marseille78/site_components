@@ -1,3 +1,3 @@
 ### Toggle на CSS
 
-[Toggle](/toggler.png)
+[Alt Toggle](toggler.png)
