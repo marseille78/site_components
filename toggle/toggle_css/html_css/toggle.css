@@ -1,0 +1,32 @@
+/* Toggle */
+.toggle-label {
+  font-size: 16px;
+  background: #fff;
+  padding: 1em;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 1em; }
+  .toggle-label:after {
+    content: "+";
+    color: #ED3E44;
+    float: right;
+    font-weight: bold; }
+
+.toggle-content {
+  color: #B0B3C2;
+  font-family: monospace;
+  font-size: 16px;
+  margin-bottom: 1.5em;
+  padding: 1em; }
+
+.toggle-input {
+  display: none; }
+  .toggle-input:not(checked) ~ .toggle-content {
+    display: none; }
+
+.toggle-input:checked ~ .toggle-content {
+  display: block; }
+
+.toggle-input:checked ~ .toggle-label:after {
+  content: "-"; }
+/* end Toggle */

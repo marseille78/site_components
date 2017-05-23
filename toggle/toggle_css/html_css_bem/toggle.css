@@ -1,0 +1,28 @@
+/* Toggle */
+.toggle__label {
+  font-size: 16px;
+  background: #fff;
+  padding: 1em;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 1em; }
+  .toggle__label:after {
+    content: "+";
+    color: #ED3E44;
+    float: right; }
+
+.toggle__content {
+  color: #B0B3C2;
+  font-size: 16px;
+  margin-bottom: 1.5em;
+  padding: 1em; }
+
+.toggle__hidden-field {
+  display: none; }
+  .toggle__hidden-field:not(checked) ~ .toggle__content {
+    display: none; }
+  .toggle__hidden-field:checked ~ .toggle__content {
+    display: block; }
+  .toggle__hidden-field:checked ~ .toggle__label:after {
+    content: "-"; }
+/* end Toggle */

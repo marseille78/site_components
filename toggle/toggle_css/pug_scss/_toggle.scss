@@ -1,0 +1,62 @@
+// Vars
+
+// Fonts
+$toggle-title-size: 16px;
+$toggle-content-font-size: 16px;
+
+// Palette
+$toggle-title-bg: #fff;
+$toggle-title-caret: $ED3E44;
+$toggle-content-color: #B0B3C2;
+
+// Size
+$toggle-title-padding: 1em;
+$toggle-title-margin: 1em;
+$toggle-content-margin: 1.5em;
+$toggle-content-padding: 1em;
+
+
+/* Toggle */
+.toggle-label {
+    font-size: $toggle-title-size;
+    background: $toggle-title-bg;
+    padding: $toggle-title-padding;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto $toggle-title-margin;
+
+    &:after {
+        content: "+";
+        color: $toggle-title-caret;
+        float: right;
+    }
+}
+
+.toggle-content {
+    color: $toggle-content-color;
+    font-size: $toggle-content-font-size;
+    margin-bottom: $toggle-content-margin;
+    padding: $toggle-content-padding;
+}
+
+.toggle-input {
+    display: none; //Hide input element
+
+    &:not(checked) ~ .toggle-content {
+        display: none; //Hide content
+    }
+}
+
+//Display content when checkbox is "checked"
+.toggle-input:checked {
+    & ~ .toggle-content {
+        display: block;
+    }
+  
+    & ~ .toggle-label {
+        &:after {
+            content: "-"; //Change label's '+' to '-' when checked
+        }
+    }
+}
+/* end Toggle */
